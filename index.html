@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime List</title>
+    <link rel="stylesheet" href="style - Amber, Golden yellow.css"> <!-- Link to external CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body class="dark-mode"> <!-- Make dark mode the default -->
+    <!-- Filter Button -->
+    <button id="filter-button" onclick="toggleFilterMenu()">Filter Animes</button>
+    
+    
+    <!-- Filter Menu -->
+    <div id="filter-menu">
+        <label for="filter-select">Sort By:</label>
+        <select id="filter-select" onchange="applyFilter()">
+            <option value="">--Select Filter--</option>
+            <option value="alphabetical">Alphabetical Order</option>
+            <option value="rating">Rating (High to Low)</option>
+            <option value="genre">Genre</option>
+        </select>
+        <button id="swap-button" onclick="swapOrder()"><i class="fas fa-exchange-alt"></i></button>
+            
+        
+    </div>
+
+    <!-- Anime List -->
+    <div class="anime-list">
+        <!-- Anime 1: Assassination Classroom -->
+        <div class="anime-item" data-original-src="image/Anime-photos/Assassinations classroom 2.jpg" data-genre="Adventure" data-rating="9">
+            <img src="image/Anime-photos/Assassinations classroom 2.jpg" alt="anime-image">
+            <div class="anime-details">
+                <p class="anime-name expandable" onclick="toggleText(this)">Assassination Classroom <span class="show-more">Season 1</span></p>
+                <p class="score">Score: 9/10</p>
+                <p class="genre">Genre: Brutal </p>
+                <div class="seasons">
+                    <label for="season-select1">Select Season:</label>
+                    <select id="season-select1" class="season-dropdown" onchange="showEpisodes(this)">
+                        <option value="">--Select Season--</option>
+                        <option value="season1-1">Season 1</option>
+                        <option value="season1-2">Season 2</option>
+                    </select>
+                    <p class="episode-count" id="season1-1">Season 1 has 25 episodes.</p>
+                    <p class="episode-count" id="season1-2">Season 2 has 12 episodes.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Anime 2: Attack on Titan -->
+        <div class="anime-item" data-original-src="image/Anime-photos/Attack on titan 2 bad.webp" data-genre="Adventure" data-rating="10">
+            <img src="image/Anime-photos/Attack on titan 2 bad.webp" alt="anime-image">
+            <div class="anime-details">
+                <p class="anime-name expandable" onclick="toggleText(this)">Attack on Titan (AOT) <span class="show-more">Season 1</span></p>
+                <p class="score">Score: 10/10</p>
+                <p class="genre">Genre: Adventure </p>
+                <div class="seasons">
+                    <label for="season-select2">Select Season:</label>
+                    <select id="season-select2" class="season-dropdown" onchange="showEpisodes(this)">
+                        <option value="">--Select Season--</option>
+                        <option value="season2-1">Season 1</option>
+                        <option value="season2-2">Season 2</option>
+                        <option value="season2-3">Season 3</option>
+                        <option value="season2-4">Season 4</option>
+                    </select>
+                    <p class="episode-count" id="season2-1">Season 1 has 25 episodes.</p>
+                    <p class="episode-count" id="season2-2">Season 2 has 12 episodes.</p>
+                    <p class="episode-count" id="season2-3">Season 3 has 22 episodes.</p>
+                    <p class="episode-count" id="season2-4">Season 4 has 16 episodes.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Anime 3: One Piece -->
+        <div class="anime-item" data-original-src="image/Anime-photos/One piece.jpe" data-genre="Adventure" data-rating="8.5">
+            <img src="image/Anime-photos/One piece.jpe" alt="anime-image">
+            <div class="anime-details">
+                <p class="anime-name expandable" onclick="toggleText(this)">One Piece <span class="show-more">Season 1</span></p>
+                <p class="score">Score: 8.5/10</p>
+                <p class="genre">Genre: Clementine</p>
+                <div class="seasons">
+                    <label for="season-select3">Select Season:</label>
+                    <select id="season-select3" class="season-dropdown" onchange="showEpisodes(this)">
+                        <option value="">--Select Season--</option>
+                        <option value="season3-1">Season 1</option>
+                        <option value="season3-2">Season 2</option>
+                        <option value="season3-3">Season 3</option>
+                        <option value="season3-4">Season 4</option>
+                        <option value="season3-5">Season 5</option>
+                    </select>
+                    <p class="episode-count" id="season3-1">Season 1 has 61 episodes.</p>
+                    <p class="episode-count" id="season3-2">Season 2 has 73 episodes.</p>
+                    <p class="episode-count" id="season3-3">Season 3 has 33 episodes.</p>
+                    <p class="episode-count" id="season3-4">Season 4 has 45 episodes.</p>
+                    <p class="episode-count" id="season3-5">Season 5 has 40 episodes.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Default Image Box -->
+        <div>
+            <img id="default-image" src="image/Anime-photos/Assassination classroom 2.jpg" alt="Default Image" />
+        </div>
+    </div>
+
+    <script src="script.js"></script> <!-- Link to external JavaScript -->
+</body>
+</html>
